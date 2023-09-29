@@ -1,0 +1,111 @@
+<p-toast key="tst" [baseZIndex]="99999"></p-toast>
+
+<p-confirmDialog
+  header="Confirmación"
+  key="confirm"
+  icon="pi pi-exclamation-triangle"
+  [style]="{ width: '350px' }"
+  acceptButtonStyleClass="p-button-text"
+  rejectButtonStyleClass="p-button-text"
+>
+</p-confirmDialog>
+
+<div class="grid m-5">
+  <div class="col-12">
+    <div class="card">
+      <h3>Crear Producto</h3>
+      <form [formGroup]="productoForm" (ngSubmit)="saveProducto()">
+        <div class="grid p-fluid mt-4">
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="nombre"
+                required
+              />
+              <label for="lefticon">Nombre</label>
+            </span>
+          </div>
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="detalle"
+                required
+              />
+              <label for="lefticon">Detalle</label>
+            </span>
+          </div>
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="number"
+                id="lefticon"
+                pInputText
+                formControlName="stock"
+                required
+              />
+              <label for="lefticon">Stock</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="dropdown"
+                [autoDisplayFirst]="false"
+                [options]="categorias"
+                formControlName="categoria"
+              ></p-dropdown>
+              <label for="dropdown">Categoría</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="dropdown"
+                [autoDisplayFirst]="false"
+                [options]="proveedores"
+                formControlName="proveedor"
+                optionLabel="nombre"
+              ></p-dropdown>
+              <label for="dropdown">Proveedores</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="number"
+                id="lefticon"
+                pInputText
+                formControlName="precio"
+                required
+              />
+              <label for="lefticon">Precio</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-10 mt-5"></div>
+          <div class="field col-12 md:col-2 mt-5">
+            <p-button
+              label="Guardar"
+              icon="pi pi-save"
+              [loading]="loading"
+              type="submit"
+            ></p-button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

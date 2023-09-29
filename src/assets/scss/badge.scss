@@ -1,0 +1,138 @@
+.customer-badge,
+.document-badge,
+.categoria-badge,
+.producto-badge ,
+.order-badge {
+    border-radius: var(--border-radius);
+    padding: .25em .5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .3px;
+}
+
+.categoria-badge {
+    &.status-Temperatura{
+        background: #8bd68e;
+        color: #256029;
+    }
+    &.status-Humedad{
+        background: #FFCDD2;
+        color: #C63737;
+    }
+}
+
+
+.producto-badge {
+    &.status-T{
+        background: #8bd68e;
+        color: #256029;
+    }
+    &.status-F{
+        background: #FFCDD2;
+        color: #C63737;
+    }
+    &.status-M{
+        background: #ea5c5c;
+        color: #8d0a0a;
+    }
+}
+
+.document-badge {
+    &.status-PROCEDIMIENTO {
+        background: #8bd68e;
+        color: #256029;
+    }
+
+    &.status-INSTRUCTIVO {
+        background: #FFCDD2;
+        color: #C63737;
+    }
+
+    &.status-REGISTRO {
+        background: #FEEDAF;
+        color: #8A5340;
+    }
+    &.status-N{
+        background: #B3E5FC;
+        color: #23547B;
+    }
+    &.status-R{
+        background: #ea5c5c;
+        color: #8d0a0a;
+    }
+    &.status-E{
+        background: #B3E5FC;
+        color: #23547B;
+    }
+    &.status-V{
+        background: #B3E5FC;
+        color: #23547B;
+    }
+    &.status-A{
+        background: #B3E5FC;
+        color: #23547B;
+    }
+    &.status-RA{
+        background: #ea5c5c;
+        color: #8d0a0a;
+    }&.status-EN{
+        background: #8bd68e;
+        color: #256029;
+    }
+
+}
+
+.customer-badge {
+    &.status-qualified {
+        background: #C8E6C9;
+        color: #256029;
+    }
+
+    &.status-unqualified {
+        background: #FFCDD2;
+        color: #C63737;
+    }
+
+    &.status-negotiation {
+        background: #FEEDAF;
+        color: #8A5340;
+    }
+
+    &.status-new {
+        background: #B3E5FC;
+        color: #23547B;
+    }
+
+    &.status-renewal {
+        background: #ECCFFF;
+        color: #694382;
+    }
+
+    &.status-proposal {
+        background: #FFD8B2;
+        color: #805B36;
+    }
+}
+
+.order-badge {
+    &.order-delivered {
+        background: #C8E6C9;
+        color: #256029;
+    }
+
+    &.order-cancelled {
+        background: #FFCDD2;
+        color: #C63737;
+    }
+
+    &.order-pending {
+        background: #FEEDAF;
+        color: #8A5340;
+    }
+
+    &.order-returned {
+        background: #ECCFFF;
+        color: #694382;
+    }
+}

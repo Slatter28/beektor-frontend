@@ -1,0 +1,63 @@
+<!-- <link
+  rel="stylesheet"
+  type="text/css"
+  [href]="sanitizer.bypassSecurityTrustResourceUrl(cssUrl)"
+/> -->
+<p-confirmDialog
+  Confirmación="Confirmación"
+  key="confirml1"
+  icon="pi pi-exclamation-triangle"
+  message="Are you sure you want to proceed?"
+  [style]="{ width: '350px' }"
+  acceptButtonStyleClass="p-button-text"
+  rejectButtonStyleClass="p-button-text"
+></p-confirmDialog>
+<div class="layout-topbar">
+  <a class="layout-topbar-logo" routerLink="">
+    <!-- <img src="assets/img/logo.png" alt="logo" /> -->
+    <span>Beektor</span>
+  </a>
+
+  <button
+    #menubutton
+    class="p-link layout-menu-button layout-topbar-button"
+    (click)="layoutService.onMenuToggle()"
+  >
+    <i class="pi pi-bars"></i>
+  </button>
+
+  <button
+    #topbarmenubutton
+    class="p-link layout-topbar-menu-button layout-topbar-button"
+    (click)="layoutService.showProfileSidebar()"
+  >
+    <i class="pi pi-ellipsis-v"></i>
+  </button>
+
+  <div
+    #topbarmenu
+    class="layout-topbar-menu"
+    [ngClass]="{
+      'layout-topbar-menu-mobile-active':
+        layoutService.state.profileSidebarVisible
+    }"
+  >
+    <!-- <button class="p-link layout-topbar-button">
+        <i class="pi pi-calendar"></i>
+        <span>Notificaciones</span>
+      </button> -->
+    <button class="p-link layout-topbar-button" (click)="changeStyle()">
+      <i class="pi pi-user"></i>
+      <span>Perfil</span>
+    </button>
+
+    <button
+      class="p-link layout-topbar-button"
+      (click)="logout()"
+      pTooltip="Cerrar Sesión"
+    >
+      <i class="pi pi-sign-out"></i>
+      <span>Cerrar Sesión</span>
+    </button>
+  </div>
+</div>

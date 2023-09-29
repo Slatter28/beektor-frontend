@@ -1,0 +1,114 @@
+<p-toast key="tst" [baseZIndex]="99999"></p-toast>
+
+<p-confirmDialog
+  header="Confirmación"
+  key="confirm"
+  icon="pi pi-exclamation-triangle"
+  [style]="{ width: '350px' }"
+  acceptButtonStyleClass="p-button-text"
+  rejectButtonStyleClass="p-button-text"
+>
+</p-confirmDialog>
+
+<div class="grid m-5">
+  <div class="col-12">
+    <div class="card">
+      <h3>Crear Cliente</h3>
+      <form [formGroup]="clienteForm" (ngSubmit)="saveCliente()">
+        <div class="grid p-fluid mt-4">
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="cedula"
+                required
+              />
+              <label for="lefticon">Cédula</label>
+            </span>
+          </div>
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="nombre"
+                required
+              />
+              <label for="lefticon">Nombre</label>
+            </span>
+          </div>
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="apellido"
+                required
+              />
+              <label for="lefticon">Apellido</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="direccion"
+                required
+              />
+              <label for="lefticon">Dirección</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="telefono"
+                required
+              />
+              <label for="lefticon">Teléfono</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="email"
+                id="lefticon"
+                pInputText
+                formControlName="correo"
+                required
+              />
+              <label for="lefticon">Correo</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-10 mt-5"></div>
+          <div class="field col-12 md:col-2 mt-5">
+            <p-button
+              label="Guardar"
+              icon="pi pi-save"
+              [loading]="loading"
+              type="submit"
+            ></p-button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

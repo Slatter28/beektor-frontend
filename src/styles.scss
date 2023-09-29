@@ -1,0 +1,21 @@
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.scss";
+@import "assets/css/themeLight.css";
+@import "assets/css/theme.css";
+@import "assets/scss/layout.scss";
+@import "assets/scss/badge.scss";
+
+
+.NgxEditor {
+    min-height: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .animacion {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  

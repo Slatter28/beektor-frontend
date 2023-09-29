@@ -1,0 +1,47 @@
+<p-toast key="tst" [baseZIndex]="99999"></p-toast>
+
+<p-confirmDialog
+  header="Confirmación"
+  key="confirm"
+  icon="pi pi-exclamation-triangle"
+  [style]="{ width: '350px' }"
+  acceptButtonStyleClass="p-button-text"
+  rejectButtonStyleClass="p-button-text"
+>
+</p-confirmDialog>
+
+<div class="grid">
+  <div class="col-12">
+    <div class="card m-4">
+      <h5>Temperatura y Humedad</h5>
+      <div class="flex justify-content-center align-items-center gap-5">
+        <ngx-gauge
+          [type]="gaugeType"
+          [value]="gaugeValue"
+          [label]="gaugeLabel"
+          [thresholds]="thresholdConfig"
+          [cap]="'butt'"
+          [backgroundColor]="backgroundColor"
+          [append]="gaugeAppendText"
+          [size]="300"
+          [thick]="6"
+          [margin]="0"
+          [tabIndex]="10"
+        >
+        </ngx-gauge>
+        <ngx-gauge
+          [type]="gaugeType"
+          [value]="gaugeValueHumedad"
+          [label]="'Humedad'"
+          [thresholds]="thresholdConfig"
+          [cap]="'round'"
+          [backgroundColor]="backgroundColor"
+          [append]="'%'"
+          [size]="300"
+          [thick]="6"
+        >
+        </ngx-gauge>
+      </div>
+    </div>
+  </div>
+</div>

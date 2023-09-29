@@ -1,0 +1,123 @@
+<p-toast key="tst" [baseZIndex]="99999"></p-toast>
+
+<p-confirmDialog
+  header="Confirmación"
+  key="confirm"
+  icon="pi pi-exclamation-triangle"
+  [style]="{ width: '350px' }"
+  acceptButtonStyleClass="p-button-text"
+  rejectButtonStyleClass="p-button-text"
+>
+</p-confirmDialog>
+
+<div class="grid m-5">
+  <div class="col-12">
+    <div class="card">
+      <h3>Crear Solicitud Colmena</h3>
+      <form [formGroup]="colmenaForm" (ngSubmit)="saveColmena()">
+        <div class="grid p-fluid mt-4">
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="nombre"
+                required
+              />
+              <label for="lefticon">Nombre</label>
+            </span>
+          </div>
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="ubicacion"
+                required
+              />
+              <label for="lefticon">Ubicación</label>
+            </span>
+          </div>
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="number"
+                id="lefticon"
+                pInputText
+                formControlName="produccion"
+                required
+              />
+              <label for="lefticon">Producción</label>
+            </span>
+          </div>
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="number"
+                id="lefticon"
+                pInputText
+                formControlName="peso"
+                required
+              />
+              <label for="lefticon">Peso</label>
+            </span>
+          </div>
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-left">
+              <i class="pi pi-align-center"></i>
+              <input
+                type="text"
+                id="lefticon"
+                pInputText
+                formControlName="observacion"
+                required
+              />
+              <label for="lefticon">Observación</label>
+            </span>
+          </div>
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="dropdown"
+                [autoDisplayFirst]="false"
+                [options]="productosTemperatura"
+                formControlName="productoTemperatura"
+                optionLabel="label"
+              ></p-dropdown>
+              <label for="dropdown">Producto Temperatura</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+              <p-dropdown
+                inputId="dropdown"
+                [autoDisplayFirst]="false"
+                [options]="productosHumedad"
+                formControlName="productoHumedad"
+                optionLabel="label"
+              ></p-dropdown>
+              <label for="dropdown">Producto Humedad</label>
+            </span>
+          </div>
+
+          <div class="field col-12 md:col-10 mt-5"></div>
+          <div class="field col-12 md:col-2 mt-5">
+            <p-button
+              label="Guardar"
+              icon="pi pi-save"
+              [loading]="loading"
+              type="submit"
+            ></p-button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
