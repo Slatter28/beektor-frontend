@@ -2,8 +2,11 @@
   class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden"
 >
   <div class="flex flex-column align-items-center justify-content-center">
-    <!-- <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" -->
-    <!-- <img src="assets/images/logo.png" alt="logo" class="mb-5 w-6rem flex-shrink-0"> -->
+    <!-- <img
+      src="assets/images/iconoMancha.png"
+      alt="logo"
+      class="mb-5 w-6rem flex-shrink-0"
+    /> -->
     <div
       style="
         border-radius: 56px;
@@ -20,9 +23,13 @@
         style="border-radius: 53px"
       >
         <div class="text-center mb-5">
-          <!-- <img src="assets/demo/images/login/avatar.png" alt="Image" height="50" class="mb-3"> -->
-          <div class="text-900 text-3xl font-medium mb-3">Beektor</div>
-          <span class="text-600 font-medium">Inicie sesión para continuar</span>
+          <img
+            src="assets/images/logoMancha.png"
+            alt="Image"
+            height="150"
+            class="m-0 p-0"
+          />
+          <div class="text-600 text-1xl mt-1">Inicie sesión para continuar</div>
         </div>
         <form [formGroup]="signInForm" (ngSubmit)="signIn()">
           <div>

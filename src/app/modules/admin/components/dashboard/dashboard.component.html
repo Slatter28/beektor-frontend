@@ -1,1 +1,159 @@
-<p>dashboard works!</p>
+<div class="grid">
+  <div class="col-12">
+    <div class="grid">
+      <div class="col-12 lg:col-6">
+        <div class="card mb-0">
+          <ng-container *ngIf="!loading; else loadingList">
+            <div class="flex justify-content-between mb-3">
+              <div class="flex align-items-center gap-2">
+                <span class="block text-500 font-medium"
+                  >Usuarios registrados</span
+                >
+                <!-- <div class="text-900 font-medium text-xl">15</div> -->
+              </div>
+              <div
+                class="flex align-items-center justify-content-center bg-orange-100 border-round"
+                [ngStyle]="{ width: '2.5rem', height: '2.5rem' }"
+              >
+                <i class="pi pi-users text-orange-500 text-xl"></i>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!loading; else loadingFalse">
+            <div>
+              <p-chart
+                type="bar"
+                [data]="dataUsuarios"
+                [options]="UsuarioOption"
+                height="170px"
+              ></p-chart>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!loading; else loadingList">
+            <span class="text-green-500 font-medium">Total de usuarios</span>
+            <span class="text-500"> {{ totalUser }}</span>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="col-12 lg:col-6">
+        <div class="card mb-0">
+          <ng-container *ngIf="!loading; else loadingList">
+            <div class="flex justify-content-between mb-3">
+              <div class="flex align-items-center gap-2">
+                <span class="block text-500 font-medium"
+                  >Proveedores registrados</span
+                >
+                <!-- <div class="text-900 font-medium text-xl">15</div> -->
+              </div>
+              <div
+                class="flex align-items-center justify-content-center bg-orange-100 border-round"
+                [ngStyle]="{ width: '2.5rem', height: '2.5rem' }"
+              >
+                <i class="pi pi-users text-orange-500 text-xl"></i>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!loading; else loadingFalse">
+            <div>
+              <p-chart
+                type="bar"
+                [data]="dataProveedor"
+                [options]="ProveedorOption"
+                height="170px"
+              ></p-chart>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!loading; else loadingList">
+            <span class="text-purple-500 font-medium"
+              >Total de proveedores</span
+            >
+            <span class="text-500"> {{ totalProveedor }}</span>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="col-12 lg:col-6">
+        <div class="card mb-0">
+          <ng-container *ngIf="!loading; else loadingList">
+            <div class="flex justify-content-between mb-3">
+              <div class="flex align-items-center gap-2">
+                <span class="block text-500 font-medium"
+                  >Colmenas vendidas</span
+                >
+                <!-- <div class="text-900 font-medium text-xl">15</div> -->
+              </div>
+              <div
+                class="flex align-items-center justify-content-center bg-orange-100 border-round"
+                [ngStyle]="{ width: '2.5rem', height: '2.5rem' }"
+              >
+                <i class="pi pi-money-bill text-orange-500 text-xl"></i>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!loading; else loadingFalse">
+            <div>
+              <p-chart
+                type="bar"
+                [data]="dataColmenasVendidas"
+                [options]="ColmenasVendidasOption"
+                height="170px"
+              ></p-chart>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!loading; else loadingList">
+            <span class="text-orange-500 font-medium"
+              >Total de colmenas vendidas</span
+            >
+            <span class="text-500"> {{ totalColmenasVendidas }}</span>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="col-12 lg:col-6">
+        <div class="card mb-0">
+          <ng-container *ngIf="!loading; else loadingList">
+            <div class="flex justify-content-between mb-3">
+              <div class="flex align-items-center gap-2">
+                <span class="block text-500 font-medium"
+                  >Registro de sensores</span
+                >
+                <!-- <div class="text-900 font-medium text-xl">15</div> -->
+              </div>
+              <div
+                class="flex align-items-center justify-content-center bg-orange-100 border-round"
+                [ngStyle]="{ width: '2.5rem', height: '2.5rem' }"
+              >
+                <i class="pi pi-chart-bar text-orange-500 text-xl"></i>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!loading; else loadingFalse">
+            <div>
+              <p-chart
+                type="bar"
+                [data]="dataSensores"
+                [options]="SensoresOption"
+                height="170px"
+              ></p-chart>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!loading; else loadingList">
+            <span class="text-orange-500 font-medium"
+              >Total de registro de sensores</span
+            >
+            <span class="text-500"> {{ totalSensores }}</span>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingList>
+  <p-skeleton width="75%" styleClass="mb-2"></p-skeleton>
+</ng-template>
+
+<ng-template #loadingFalse>
+  <p-skeleton width="100%" height="150px" styleClass="mb-2"></p-skeleton>
+</ng-template>

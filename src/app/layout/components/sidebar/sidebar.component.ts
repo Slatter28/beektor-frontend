@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { LayoutService } from '../../services/layout.service';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 import { UserService } from 'src/app/modules/auth/services/user.service';
+import { Router } from '@angular/router';
 // import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class SidebarComponent implements OnInit {
   constructor(
     public layoutService: LayoutService,
     public el: ElementRef,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.modelAdmin = [
@@ -136,6 +138,7 @@ export class SidebarComponent implements OnInit {
     this.userService.user$.subscribe((user) => {
       this.usuario = user;
       if (this.usuario.rol == 'USER_ROLE') {
+        this.router.navigate(['/public/colmenas']);
         this.model = this.modelUsuario;
       }
       if (this.usuario.rol == 'ADMIN_ROLE') {
