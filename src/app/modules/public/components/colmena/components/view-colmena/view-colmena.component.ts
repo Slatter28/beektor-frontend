@@ -23,39 +23,9 @@ export class ViewColmenaComponent implements OnInit {
     '40': { color: 'orange', bgOpacity: 0.2 },
     '75.5': { color: 'red', bgOpacity: 0.2 },
   };
-  // markers = {
-  //   '0': {
-  //     color: 'green',
-  //     // type: 'line',
-  //     size: 2,
-  //   },
-  //   '25': {
-  //     color: 'orange',
-  //     // type: 'line',
-  //     label: '25%',
-  //     font: '12px arial',
-  //     size: 2,
-  //   },
-  //   '50': {
-  //     color: 'red',
-  //     // type: 'triangle',
-  //     size: 2,
-  //     label: '50%',
-  //     font: '12px arial',
-  //   },
-  //   '75': {
-  //     color: 'orange',
-  //     // type: 'line',
-  //     size: 2,
-  //     label: '75%',
-  //     font: '12px arial',
-  //   },
-  //   '100': {
-  //     color: 'green',
-  //     // type: 'line',
-  //     size: 2,
-  //   },
-  // };
+
+  nombreColmena: string = '';
+  loadingNombre: boolean = false;
 
   id: string = '';
   constructor(
@@ -90,7 +60,9 @@ export class ViewColmenaComponent implements OnInit {
   getLastSensores(): void {
     this.colmenaService.getLastSensores(this.id).subscribe((res: any) => {
       console.log(res);
-      if (res._id == this.id) {
+      this.nombreColmena = res.colmena.nombre;
+      this.loadingNombre = true;
+      if (res.colmena._id == this.id) {
         this.gaugeValue = parseFloat(res.temperatura);
         this.gaugeValueHumedad = parseFloat(res.humedad);
       }

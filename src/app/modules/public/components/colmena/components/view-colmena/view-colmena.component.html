@@ -13,7 +13,7 @@
 <div class="grid">
   <div class="col-12">
     <div class="card m-4">
-      <h5>Temperatura y Humedad</h5>
+      <h5 *ngIf="loadingNombre">{{ nombreColmena }}</h5>
       <div class="flex justify-content-center align-items-center gap-5">
         <ngx-gauge
           [type]="gaugeType"
